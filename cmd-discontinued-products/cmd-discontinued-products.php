@@ -4,7 +4,6 @@
  * Description: Add discontinued stock status.
  * Author: Conrado Diorio
  * Version: 1.0
-
  */
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
@@ -17,7 +16,6 @@ function filter_woocommerce_product_stock_status_options( $status ) {
     return $status;
 }
 add_filter( 'woocommerce_product_stock_status_options', 'filter_woocommerce_product_stock_status_options', 10, 1 );
-
 
 // Availability text
 function filter_woocommerce_get_availability_text( $availability, $product ) {
@@ -32,7 +30,6 @@ function filter_woocommerce_get_availability_text( $availability, $product ) {
 }
 add_filter( 'woocommerce_get_availability_text', 'filter_woocommerce_get_availability_text', 10, 2 );
 
-
 // Availability CSS class
 function filter_woocommerce_get_availability_class( $class, $product ) {
     // Get stock status
@@ -46,7 +43,6 @@ function filter_woocommerce_get_availability_class( $class, $product ) {
     return $class;
 }
 add_filter( 'woocommerce_get_availability_class', 'filter_woocommerce_get_availability_class', 10, 2 );
-
 
 // Admin stock html
 function filter_woocommerce_admin_stock_html( $stock_html, $product ) {
@@ -77,7 +73,6 @@ function filter_woocommerce_admin_stock_html( $stock_html, $product ) {
 }
 add_filter( 'woocommerce_admin_stock_html', 'filter_woocommerce_admin_stock_html', 10, 2 );
 
-
 // Disable Add Cart Button for Discontinued Productos
 function filter_is_purchasable_callback( $purchasable, $product ) {
 	
@@ -89,9 +84,6 @@ function filter_is_purchasable_callback( $purchasable, $product ) {
 }
 add_filter('woocommerce_is_purchasable', 'filter_is_purchasable_callback', 10, 2 );
 add_filter('woocommerce_variation_is_purchasable', 'filter_is_purchasable_callback', 10, 2 );
-
-
-
 
 // Show message for single product 
 function action_woocommerce_simple_add_to_cart() {

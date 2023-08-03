@@ -41,15 +41,18 @@ function filter_woocommerce_get_availability_class( $class, $product ) {
     }
 
     return $class;
+	
 }
 add_filter( 'woocommerce_get_availability_class', 'filter_woocommerce_get_availability_class', 10, 2 );
 
 // Admin stock html
 function filter_woocommerce_admin_stock_html( $stock_html, $product ) {
+	
     // Simple
     if ( $product->is_type( 'simple' ) ) {
         // Get stock status
         $product_stock_status = $product->get_stock_status();
+	    
     // Variable
     } elseif ( $product->is_type( 'variable' ) ) {
         foreach( $product->get_visible_children() as $variation_id ) {
@@ -70,6 +73,7 @@ function filter_woocommerce_admin_stock_html( $stock_html, $product ) {
     }
  
     return $stock_html;
+	
 }
 add_filter( 'woocommerce_admin_stock_html', 'filter_woocommerce_admin_stock_html', 10, 2 );
 
@@ -97,6 +101,6 @@ function action_woocommerce_simple_add_to_cart() {
 	}
 	
 	return;
-
+	
 }
 add_action( 'woocommerce_simple_add_to_cart', 'action_woocommerce_simple_add_to_cart', 10, 0); 

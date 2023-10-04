@@ -37,7 +37,6 @@ function filter_woocommerce_get_availability_class( $class, $product ) {
         case 'discontinued':
             $class = 'out-of-stock';
         break;
-        
     }
 
     return $class;
@@ -95,9 +94,7 @@ function action_woocommerce_simple_add_to_cart() {
 	global $product;
 	
 	if ( $product->get_stock_status() === 'discontinued' ) {
-
 		echo '<span class="out-of-stock"><i class="fas fa-exclamation-triangle"></i> <b>Discontinued Product</b></span>';
-		
 	}
 	
 	return;

@@ -1,8 +1,9 @@
 <?php
 /**
- * Plugin Name: Discontinued Products
+ * Plugin Name: CMD Discontinued Products
  * Description: Add discontinued stock status.
  * Author: Conrado Diorio
+ * Author URI: https://conradomd.com.br
  * Version: 1.0
  */
 

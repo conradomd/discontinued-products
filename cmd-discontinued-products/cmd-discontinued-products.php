@@ -94,7 +94,7 @@ function action_woocommerce_simple_add_to_cart() {
 	global $product;
 	
 	if ( $product->get_stock_status() === 'discontinued' ) {
-		echo '<span class="out-of-stock"><i class="fas fa-exclamation-triangle"></i> <b>Discontinued Product</b></span>';
+		echo '<span class="out-of-stock"><i class="fas fa-exclamation-triangle"></i><b>' . __( 'Discontinued Product', 'woocommerce' ) . '</b></span>';
 	}
 	
 	return;
